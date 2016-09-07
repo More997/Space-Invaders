@@ -38,6 +38,22 @@ class ApplicationMain {
 		types.push (lime.Assets.AssetType.TEXT);
 		
 		
+		urls.push ("assets/images/Imported piskel (1).png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("assets/images/Imported piskel (2).png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("assets/images/Imported piskel (3).png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("assets/images/Imported piskel.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
 		urls.push ("assets/images/Protagonista.png");
 		types.push (lime.Assets.AssetType.IMAGE);
 		
@@ -131,7 +147,7 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "25",
+			build: "10",
 			company: "HaxeFlixel",
 			file: "Clase 04",
 			fps: 60,

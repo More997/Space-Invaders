@@ -58,6 +58,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
+		
+		
+		
 		openfl.text.Font.registerFont (__ASSET__OPENFL__flixel_fonts_nokiafc22_ttf);
 		openfl.text.Font.registerFont (__ASSET__OPENFL__flixel_fonts_monsterrat_ttf);
 		
@@ -70,6 +74,14 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/data/data-goes-here.txt", AssetType.TEXT);
 		className.set ("assets/images/images-go-here.txt", __ASSET__assets_images_images_go_here_txt);
 		type.set ("assets/images/images-go-here.txt", AssetType.TEXT);
+		className.set ("assets/images/Imported piskel (1).png", __ASSET__assets_images_imported_piskel__1__png);
+		type.set ("assets/images/Imported piskel (1).png", AssetType.IMAGE);
+		className.set ("assets/images/Imported piskel (2).png", __ASSET__assets_images_imported_piskel__2__png);
+		type.set ("assets/images/Imported piskel (2).png", AssetType.IMAGE);
+		className.set ("assets/images/Imported piskel (3).png", __ASSET__assets_images_imported_piskel__3__png);
+		type.set ("assets/images/Imported piskel (3).png", AssetType.IMAGE);
+		className.set ("assets/images/Imported piskel.png", __ASSET__assets_images_imported_piskel_png);
+		type.set ("assets/images/Imported piskel.png", AssetType.IMAGE);
 		className.set ("assets/images/Protagonista.png", __ASSET__assets_images_protagonista_png);
 		type.set ("assets/images/Protagonista.png", AssetType.IMAGE);
 		className.set ("assets/music/music-goes-here.txt", __ASSET__assets_music_music_goes_here_txt);
@@ -99,6 +111,22 @@ class DefaultAssetLibrary extends AssetLibrary {
 		path.set (id, id);
 		
 		type.set (id, AssetType.TEXT);
+		id = "assets/images/Imported piskel (1).png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/Imported piskel (2).png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/Imported piskel (3).png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/Imported piskel.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
 		id = "assets/images/Protagonista.png";
 		path.set (id, id);
 		
@@ -154,6 +182,18 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		className.set ("assets/images/images-go-here.txt", __ASSET__assets_images_images_go_here_txt);
 		type.set ("assets/images/images-go-here.txt", AssetType.TEXT);
+		
+		className.set ("assets/images/Imported piskel (1).png", __ASSET__assets_images_imported_piskel__1__png);
+		type.set ("assets/images/Imported piskel (1).png", AssetType.IMAGE);
+		
+		className.set ("assets/images/Imported piskel (2).png", __ASSET__assets_images_imported_piskel__2__png);
+		type.set ("assets/images/Imported piskel (2).png", AssetType.IMAGE);
+		
+		className.set ("assets/images/Imported piskel (3).png", __ASSET__assets_images_imported_piskel__3__png);
+		type.set ("assets/images/Imported piskel (3).png", AssetType.IMAGE);
+		
+		className.set ("assets/images/Imported piskel.png", __ASSET__assets_images_imported_piskel_png);
+		type.set ("assets/images/Imported piskel.png", AssetType.IMAGE);
 		
 		className.set ("assets/images/Protagonista.png", __ASSET__assets_images_protagonista_png);
 		type.set ("assets/images/Protagonista.png", AssetType.IMAGE);
@@ -825,6 +865,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 @:keep @:bind #if display private #end class __ASSET__assets_data_data_goes_here_txt extends null { }
 @:keep @:bind #if display private #end class __ASSET__assets_images_images_go_here_txt extends null { }
+@:keep @:bind #if display private #end class __ASSET__assets_images_imported_piskel__1__png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_images_imported_piskel__2__png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_images_imported_piskel__3__png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_images_imported_piskel_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_images_protagonista_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_music_music_goes_here_txt extends null { }
 @:keep @:bind #if display private #end class __ASSET__assets_sounds_sounds_go_here_txt extends null { }
@@ -836,6 +880,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 #elseif html5
+
+
+
+
 
 
 
@@ -858,14 +906,18 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 @:file("assets/data/data-goes-here.txt") #if display private #end class __ASSET__assets_data_data_goes_here_txt extends lime.utils.Bytes {}
 @:file("assets/images/images-go-here.txt") #if display private #end class __ASSET__assets_images_images_go_here_txt extends lime.utils.Bytes {}
+@:image("assets/images/Imported piskel (1).png") #if display private #end class __ASSET__assets_images_imported_piskel__1__png extends lime.graphics.Image {}
+@:image("assets/images/Imported piskel (2).png") #if display private #end class __ASSET__assets_images_imported_piskel__2__png extends lime.graphics.Image {}
+@:image("assets/images/Imported piskel (3).png") #if display private #end class __ASSET__assets_images_imported_piskel__3__png extends lime.graphics.Image {}
+@:image("assets/images/Imported piskel.png") #if display private #end class __ASSET__assets_images_imported_piskel_png extends lime.graphics.Image {}
 @:image("assets/images/Protagonista.png") #if display private #end class __ASSET__assets_images_protagonista_png extends lime.graphics.Image {}
 @:file("assets/music/music-goes-here.txt") #if display private #end class __ASSET__assets_music_music_goes_here_txt extends lime.utils.Bytes {}
 @:file("assets/sounds/sounds-go-here.txt") #if display private #end class __ASSET__assets_sounds_sounds_go_here_txt extends lime.utils.Bytes {}
-@:file("C:/HaxeToolkit/haxe/lib/flixel/4,1,1/assets/sounds/beep.ogg") #if display private #end class __ASSET__flixel_sounds_beep_ogg extends lime.utils.Bytes {}
-@:file("C:/HaxeToolkit/haxe/lib/flixel/4,1,1/assets/sounds/flixel.ogg") #if display private #end class __ASSET__flixel_sounds_flixel_ogg extends lime.utils.Bytes {}
-@:font("C:/HaxeToolkit/haxe/lib/flixel/4,1,1/assets/fonts/nokiafc22.ttf") #if display private #end class __ASSET__flixel_fonts_nokiafc22_ttf extends lime.text.Font {}
-@:font("C:/HaxeToolkit/haxe/lib/flixel/4,1,1/assets/fonts/monsterrat.ttf") #if display private #end class __ASSET__flixel_fonts_monsterrat_ttf extends lime.text.Font {}
-@:image("C:/HaxeToolkit/haxe/lib/flixel/4,1,1/assets/images/ui/button.png") #if display private #end class __ASSET__flixel_images_ui_button_png extends lime.graphics.Image {}
+@:file("C:/HaxeToolkit/haxe/lib/flixel/4,1,0/assets/sounds/beep.ogg") #if display private #end class __ASSET__flixel_sounds_beep_ogg extends lime.utils.Bytes {}
+@:file("C:/HaxeToolkit/haxe/lib/flixel/4,1,0/assets/sounds/flixel.ogg") #if display private #end class __ASSET__flixel_sounds_flixel_ogg extends lime.utils.Bytes {}
+@:font("C:/HaxeToolkit/haxe/lib/flixel/4,1,0/assets/fonts/nokiafc22.ttf") #if display private #end class __ASSET__flixel_fonts_nokiafc22_ttf extends lime.text.Font {}
+@:font("C:/HaxeToolkit/haxe/lib/flixel/4,1,0/assets/fonts/monsterrat.ttf") #if display private #end class __ASSET__flixel_fonts_monsterrat_ttf extends lime.text.Font {}
+@:image("C:/HaxeToolkit/haxe/lib/flixel/4,1,0/assets/images/ui/button.png") #if display private #end class __ASSET__flixel_images_ui_button_png extends lime.graphics.Image {}
 
 
 
