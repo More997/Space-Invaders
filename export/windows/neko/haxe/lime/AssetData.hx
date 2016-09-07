@@ -18,14 +18,14 @@ class AssetData {
 			
 			path.set ("assets/data/data-goes-here.txt", "assets/data/data-goes-here.txt");
 			type.set ("assets/data/data-goes-here.txt", Reflect.field (AssetType, "text".toUpperCase ()));
-			path.set ("assets/images/Enemigo 01.png", "assets/images/Enemigo 01.png");
-			type.set ("assets/images/Enemigo 01.png", Reflect.field (AssetType, "image".toUpperCase ()));
-			path.set ("assets/images/Enemigo 02.png", "assets/images/Enemigo 02.png");
-			type.set ("assets/images/Enemigo 02.png", Reflect.field (AssetType, "image".toUpperCase ()));
-			path.set ("assets/images/Enemigo 03.png", "assets/images/Enemigo 03.png");
-			type.set ("assets/images/Enemigo 03.png", Reflect.field (AssetType, "image".toUpperCase ()));
-			path.set ("assets/images/Enemigo 04.png", "assets/images/Enemigo 04.png");
-			type.set ("assets/images/Enemigo 04.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			path.set ("assets/images/Enemigo01.png", "assets/images/Enemigo01.png");
+			type.set ("assets/images/Enemigo01.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			path.set ("assets/images/Enemigo02.png", "assets/images/Enemigo02.png");
+			type.set ("assets/images/Enemigo02.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			path.set ("assets/images/Enemigo03.png", "assets/images/Enemigo03.png");
+			type.set ("assets/images/Enemigo03.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			path.set ("assets/images/Enemigo04.png", "assets/images/Enemigo04.png");
+			type.set ("assets/images/Enemigo04.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/images/images-go-here.txt", "assets/images/images-go-here.txt");
 			type.set ("assets/images/images-go-here.txt", Reflect.field (AssetType, "text".toUpperCase ()));
 			path.set ("assets/images/Ovni.png", "assets/images/Ovni.png");

@@ -9,6 +9,7 @@ import flixel.math.FlxMath;
 
 class MenuState extends FlxState
 {  private var cuadrado:FlxSprite;
+	
 	override public function create():Void
 	{
 		super.create();
