@@ -27,6 +27,6 @@ class Balas extends FlxSprite
 		{
 			Reg.disparo = true;
 			destroy();
-		}
+		}		
 	}
 }

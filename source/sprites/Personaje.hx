@@ -34,16 +34,7 @@ class Personaje extends FlxSprite
 		if (FlxG.keys.pressed.LEFT && x > 0)
 		{
 			movizq();
-		}
-		if (FlxG.keys.justPressed.SPACE && Reg.disparo == true)
-		{
-			var b:Balas = new Balas();
-			Reg.disparo = false;
-			b.x = x + width / 2;
-			b.y = y;
-			FlxG.state.add(b);
-		}
-	}
-	
+		}		
+	}	
 	
 }

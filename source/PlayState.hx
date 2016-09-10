@@ -17,19 +17,21 @@ class PlayState extends FlxState
 	private var enemigoFila3:FlxGroup;
 	private var enemigoFila4:FlxGroup;
 	private var personaje:sprites.Personaje;
-	private var b:Balas;
+	public var b:Balas;
 	override public function create():Void
 	{
 		super.create();
+		b = new Balas();
 		enemigoFila1 = new FlxGroup();
 		var pos = 3;
 		for (i in 0...9)
 		{   
-			var enemigos1:FlxSprite = new FlxSprite(pos);
+			var enemigos1:Enemigos = new Enemigos (pos);
 			enemigos1.loadGraphic(AssetPaths.Enemigo01__png, true, 16, 16);
 			enemigos1.animation.add("mov", [0, 1], 2, true);
-			enemigos1.animation.play("mov");
+			enemigos1.animation.play("mov");			
 			enemigoFila1.add(enemigos1);
+			enemigos1.posicionX = pos;
 			pos += 17;
 			
 		}
@@ -37,11 +39,12 @@ class PlayState extends FlxState
 	     pos = 3;
 		for (i in 0...9)
 		{   
-			var enemigos2:FlxSprite = new FlxSprite(pos);
+			var enemigos2:Enemigos  = new Enemigos (pos);
 			enemigos2.loadGraphic(AssetPaths.Enemigo02__png, true, 16, 16);
 			enemigos2.animation.add("mov", [0, 1], 2, true);
 			enemigos2.animation.play("mov");
 			enemigoFila2.add(enemigos2);
+			enemigos2.posicionX = pos;
 		    enemigos2.y = 17;
 			pos += 17;
 			
@@ -50,11 +53,12 @@ class PlayState extends FlxState
 		pos= 3;
 		for (i in 0...9)
 		{   
-			var enemigos3:FlxSprite = new FlxSprite(pos);
+			var enemigos3:Enemigos = new Enemigos (pos);
 			enemigos3.loadGraphic(AssetPaths.Enemigo03__png, true, 16, 16);
 			enemigos3.animation.add("mov", [0, 1], 2, true);
 			enemigos3.animation.play("mov");
 			enemigoFila3.add(enemigos3);
+			enemigos3.posicionX = pos;
 			enemigos3.y = 34;
 			pos += 17;
 			
@@ -63,11 +67,12 @@ class PlayState extends FlxState
 	     pos = 3;
 		for (i in 0...9)
 		{   
-			var enemigos4:FlxSprite = new FlxSprite(pos);
+			var enemigos4:Enemigos  = new Enemigos (pos);
 			enemigos4.loadGraphic(AssetPaths.Enemigo04__png, true, 16, 16);
 			enemigos4.animation.add("mov", [0, 1], 2, true);
 			enemigos4.animation.play("mov");
 			enemigoFila4.add(enemigos4);
+			enemigos4.posicionX = pos;
 		    enemigos4.y = 51;
 			pos += 17;
 			
@@ -91,7 +96,8 @@ class PlayState extends FlxState
 			if (FlxG.overlap(b, enemigoFila1.members[i]))
 			{
 			Reg.disparo = true;
-			enemigoFila1.members[i].destroy()
+			b.destroy();
+			enemigoFila1.members[i].destroy();
 			}
 		} 
 	    for (i in 0...enemigoFila2.length)
@@ -99,6 +105,7 @@ class PlayState extends FlxState
 			if (FlxG.overlap(b, enemigoFila2.members[i]))
 			{
 			Reg.disparo = true;
+			b.destroy();
 			enemigoFila2.members[i].destroy();
 			}
 		} 
@@ -107,6 +114,7 @@ class PlayState extends FlxState
 			if (FlxG.overlap(b, enemigoFila3.members[i]))
 			{
 			Reg.disparo = true;
+			b.destroy();
 			enemigoFila3.members[i].destroy();
 			}
 		} 
@@ -115,10 +123,18 @@ class PlayState extends FlxState
 			if (FlxG.overlap(b, enemigoFila4.members[i]))
 			{
 			Reg.disparo = true;
+			b.destroy();
 			enemigoFila4.members[i].destroy();
 			}
 		} 
+		if (FlxG.keys.justPressed.SPACE && Reg.disparo == true)
+		{			
+			b = new Balas();
+			Reg.disparo = false;
+			b.x = personaje.x + personaje.width / 2;
+			b.y = personaje.y;
+			FlxG.state.add(b);
+		}
 		
-	}
-	
+	}	
 }
