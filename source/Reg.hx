@@ -5,8 +5,6 @@ class Reg
 	static public var currentscore: Int = 0;
 	static public var vidasActuales: Int = vidasIniciales; 
 	static public var disparo: Bool = true;
-	
-	inline static public var disparoVeloz = 300;
 	inline static public var vidasIniciales = 3;
 	
 }

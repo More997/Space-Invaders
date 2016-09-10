@@ -18,7 +18,11 @@ class Balas extends FlxSprite
 		override public function update(elapsed:Float):Void
 	{
 		super.update(elapsed);
-		
+		if (y < 0) 
+		{
+			Reg.disparo = true;
+			destroy();
+		}
 		if (y < 0) 
 		{
 			Reg.disparo = true;

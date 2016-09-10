@@ -86,14 +86,39 @@ class PlayState extends FlxState
 	{
 		super.update(elapsed);
 		personaje.acciones();
-		/*for (i in 0...enemigoFila1.length)
+		for (i in 0...enemigoFila1.length)
 		{
 			if (FlxG.overlap(b, enemigoFila1.members[i]))
 			{
-			b.destroy();
 			Reg.disparo = true;
-			enemigoFila1.members[i].destroy();
+			enemigoFila1.members[i].destroy()
 			}
-		} */
+		} 
+	    for (i in 0...enemigoFila2.length)
+		{
+			if (FlxG.overlap(b, enemigoFila2.members[i]))
+			{
+			Reg.disparo = true;
+			enemigoFila2.members[i].destroy();
+			}
+		} 
+		for (i in 0...enemigoFila3.length)
+		{
+			if (FlxG.overlap(b, enemigoFila3.members[i]))
+			{
+			Reg.disparo = true;
+			enemigoFila3.members[i].destroy();
+			}
+		} 
+		for (i in 0...enemigoFila4.length)
+		{
+			if (FlxG.overlap(b, enemigoFila4.members[i]))
+			{
+			Reg.disparo = true;
+			enemigoFila4.members[i].destroy();
+			}
+		} 
+		
 	}
+	
 }
