@@ -8,6 +8,7 @@ import flixel.text.FlxText;
 import flixel.ui.FlxButton;
 import flixel.math.FlxMath;
 import sprites.Balas;
+import sprites.Enemigos;
 import sprites.Personaje;
 
 class PlayState extends FlxState
@@ -24,9 +25,9 @@ class PlayState extends FlxState
 		b = new Balas();
 		enemigoFila1 = new FlxGroup();
 		var pos = 3;
-		for (i in 0...9)
+		for (i in 0...8)
 		{   
-			var enemigos1:Enemigos = new Enemigos (pos);
+			var enemigos1:sprites.Enemigos = new sprites.Enemigos (pos);
 			enemigos1.loadGraphic(AssetPaths.Enemigo01__png, true, 16, 16);
 			enemigos1.animation.add("mov", [0, 1], 2, true);
 			enemigos1.animation.play("mov");			
@@ -37,9 +38,9 @@ class PlayState extends FlxState
 		}
 		enemigoFila2 = new FlxGroup();
 	     pos = 3;
-		for (i in 0...9)
+		for (i in 0...8)
 		{   
-			var enemigos2:Enemigos  = new Enemigos (pos);
+			var enemigos2:sprites.Enemigos  = new sprites.Enemigos (pos);
 			enemigos2.loadGraphic(AssetPaths.Enemigo02__png, true, 16, 16);
 			enemigos2.animation.add("mov", [0, 1], 2, true);
 			enemigos2.animation.play("mov");
@@ -51,9 +52,9 @@ class PlayState extends FlxState
 		}
 		enemigoFila3 = new FlxGroup();
 		pos= 3;
-		for (i in 0...9)
+		for (i in 0...8)
 		{   
-			var enemigos3:Enemigos = new Enemigos (pos);
+			var enemigos3:sprites.Enemigos = new sprites.Enemigos (pos);
 			enemigos3.loadGraphic(AssetPaths.Enemigo03__png, true, 16, 16);
 			enemigos3.animation.add("mov", [0, 1], 2, true);
 			enemigos3.animation.play("mov");
@@ -65,9 +66,9 @@ class PlayState extends FlxState
 		}
 		enemigoFila4 = new FlxGroup();
 	     pos = 3;
-		for (i in 0...9)
+		for (i in 0...8)
 		{   
-			var enemigos4:Enemigos  = new Enemigos (pos);
+			var enemigos4:sprites.Enemigos  = new sprites.Enemigos (pos);
 			enemigos4.loadGraphic(AssetPaths.Enemigo04__png, true, 16, 16);
 			enemigos4.animation.add("mov", [0, 1], 2, true);
 			enemigos4.animation.play("mov");
