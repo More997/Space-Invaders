@@ -142,7 +142,7 @@ class PlayState extends FlxState
 		  {
 			  for (i in 0...enemigoFila1.length-1)
 		  {   o = Math.random() * enemigoFila1.length - 1;
-		  if (enemigoFila1.members[o].exist && Reg.disparoE = true)
+		  if (enemigoFila1.members[o].exist)
 		  {
 			  d = new BalasEnemigos();
 			  Reg.disparoE = false;
@@ -154,10 +154,10 @@ class PlayState extends FlxState
 		  }
 		  if(rand1 = 1)
 		  {
-			  for (i in 0...enemigosFila2.length-1)
+			  for (i in 0...enemigoFila2.length-1)
 		  {
 			  o = Math.random() * enemigoFila2.length - 1;
-			  if (enemigoFila2.members[o].exist && Reg.disparoE = true)
+			  if (enemigoFila2.members[o].exist)
 			  {
 				  d = new BalasEnemigos();
 			  Reg.disparoE = false;
@@ -169,10 +169,10 @@ class PlayState extends FlxState
 		  }
 		  if (rand1 = 2) 
 		  {
-			  for (i in 0...enemigosFila3.length-1)
+			  for (i in 0...enemigoFila3.length-1)
 		  {
 			  o = Math.random() * enemigoFila3.length - 1;
-			  if (enemigoFila3.members[o].exist && Reg.disparoE = true)
+			  if (enemigoFila3.members[o].exist)
 			  {
 				  d = new BalasEnemigos();
 			  Reg.disparoE = false;
@@ -184,9 +184,9 @@ class PlayState extends FlxState
 		  }
 		  else 
 		  {
-			  for (i in 0...enemigosFila4.length-1)
+			  for (i in 0...enemigoFila4.length-1)
 		  {o = Math.random() * enemigoFila4.length - 1;
-			  if (enemigoFila4.members[o].exist && Reg.disparoE = true)
+			  if (enemigoFila4.members[o].exist)
 			  {
 				  d = new BalasEnemigos();
 			  Reg.disparoE = false;
