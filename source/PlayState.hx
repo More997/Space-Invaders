@@ -22,6 +22,9 @@ class PlayState extends FlxState
 	private var enemigoFila4:FlxGroup;
 	private var personaje:sprites.Personaje;
 	public var b:Balas;
+	public var d:BalasEnemigos;
+	public var tiempdisp:Int = 0;
+	public var o:Int = 0;
 	override public function create():Void
 	{
 		super.create();
@@ -193,6 +196,7 @@ class PlayState extends FlxState
 			  }
 		  }
 		  }
+		  tiempdisp = 0;
 		  }
 		if (FlxG.keys.justPressed.SPACE && Reg.disparo == true)
 		{			
@@ -203,4 +207,5 @@ class PlayState extends FlxState
 			FlxG.state.add(b);
 		}		
 	}
+}
 }
