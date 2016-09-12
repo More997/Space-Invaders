@@ -23,7 +23,6 @@ class Enemigos extends FlxSprite
 		{
 			x++;
 		}
-		switch (Math.random() * 4)
-		  case 0: PlayState.
+		
 	}	
 }

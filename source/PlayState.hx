@@ -5,6 +5,7 @@ import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxState;
 import flixel.group.FlxGroup;
+import flixel.math.FlxRandom;
 import flixel.text.FlxText;
 import flixel.ui.FlxButton;
 import flixel.math.FlxMath;
@@ -130,12 +131,15 @@ class PlayState extends FlxState
 			b.destroy();
 			enemigoFila4.members[i].destroy();
 			}
-		} 
-		
-		switch (Math.random() * 3)
-		  case 0: for (i in 0...enemigoFila1.length)
-		  {   o = Math.random() * enemigoFila1.length
-		  if (enemigoFila1.members[o].exist)
+		} tiempdisp += 1;
+		if (tiempdisp = 10)
+		{
+		var rand1 = Math.random() * 3;
+		  if (rand1 = 0)
+		  {
+			  for (i in 0...enemigoFila1.length-1)
+		  {   o = Math.random() * enemigoFila1.length - 1;
+		  if (enemigoFila1.members[o].exist && Reg.disparoE = true)
 		  {
 			  d = new BalasEnemigos();
 			  Reg.disparoE = false;
@@ -144,11 +148,13 @@ class PlayState extends FlxState
 			  FlxG.state.add(d);
 			  
 		  }
-		  break;
-		  case 1: for (i in 0...enemigosFila2.length)
+		  }
+		  if(rand1 = 1)
 		  {
-			  o = Math random() * enemigoFila2.length
-			  if (enemigoFila2.members[o].exist)
+			  for (i in 0...enemigosFila2.length-1)
+		  {
+			  o = Math.random() * enemigoFila2.length - 1;
+			  if (enemigoFila2.members[o].exist && Reg.disparoE = true)
 			  {
 				  d = new BalasEnemigos();
 			  Reg.disparoE = false;
@@ -157,28 +163,37 @@ class PlayState extends FlxState
 			  FlxG.state.add(d);
 			  }
 		  }
-		  break;
-		  case 2: for (i in 0...enemigosFila3.length)
+		  }
+		  if (rand1 = 2) 
 		  {
-			  o = Math random() * enemigoFila3.length
-			  if (enemigoFila3.members[o].exist && Reg.)
+			  for (i in 0...enemigosFila3.length-1)
+		  {
+			  o = Math.random() * enemigoFila3.length - 1;
+			  if (enemigoFila3.members[o].exist && Reg.disparoE = true)
 			  {
 				  d = new BalasEnemigos();
 			  Reg.disparoE = false;
-			  d.x = enemigoFila1.members[o].x + enemigoFila1.members[o].width / 2;
-			  d.y = enemigoFila1.members[o].y;
+			  d.x = enemigoFila3.members[o].x + enemigoFila3.members[o].width / 2;
+			  d.y = enemigoFila3.members[o].y;
 			  FlxG.state.add(d);
 			  }
 		  }
-		  break;
-		  case 3: for (i in 0...enemigosFila4.length)
-		  {o = Math random() * enemigoFila4.length
-			  if (enemigoFila4.members[o].exist)
+		  }
+		  else 
+		  {
+			  for (i in 0...enemigosFila4.length-1)
+		  {o = Math.random() * enemigoFila4.length - 1;
+			  if (enemigoFila4.members[o].exist && Reg.disparoE = true)
 			  {
-				  
+				  d = new BalasEnemigos();
+			  Reg.disparoE = false;
+			  d.x = enemigoFila4.members[o].x + enemigoFila4.members[o].width / 2;
+			  d.y = enemigoFila4.members[o].y;
+			  FlxG.state.add(d);
 			  }
 		  }
-		  break;
+		  }
+		  }
 		if (FlxG.keys.justPressed.SPACE && Reg.disparo == true)
 		{			
 			b = new Balas();
@@ -187,6 +202,3 @@ class PlayState extends FlxState
 			b.y = personaje.y;
 			FlxG.state.add(b);
 		}
-		
-	}	
-}
