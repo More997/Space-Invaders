@@ -1,5 +1,6 @@
 package;
 
+import flash.utils.Timer;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxState;
@@ -8,6 +9,7 @@ import flixel.text.FlxText;
 import flixel.ui.FlxButton;
 import flixel.math.FlxMath;
 import sprites.Balas;
+import sprites.BalasEnemigos;
 import sprites.Enemigos;
 import sprites.Personaje;
 
@@ -23,6 +25,7 @@ class PlayState extends FlxState
 	{
 		super.create();
 		b = new Balas();
+		d = new BalasEnemigos();
 		enemigoFila1 = new FlxGroup();
 		var pos = 3;
 		for (i in 0...8)
@@ -128,6 +131,54 @@ class PlayState extends FlxState
 			enemigoFila4.members[i].destroy();
 			}
 		} 
+		
+		switch (Math.random() * 3)
+		  case 0: for (i in 0...enemigoFila1.length)
+		  {   o = Math.random() * enemigoFila1.length
+		  if (enemigoFila1.members[o].exist)
+		  {
+			  d = new BalasEnemigos();
+			  Reg.disparoE = false;
+			  d.x = enemigoFila1.members[o].x + enemigoFila1.members[o].width / 2;
+			  d.y = enemigoFila1.members[o].y;
+			  FlxG.state.add(d);
+			  
+		  }
+		  break;
+		  case 1: for (i in 0...enemigosFila2.length)
+		  {
+			  o = Math random() * enemigoFila2.length
+			  if (enemigoFila2.members[o].exist)
+			  {
+				  d = new BalasEnemigos();
+			  Reg.disparoE = false;
+			  d.x = enemigoFila2.members[o].x + enemigoFila2.members[o].width / 2;
+			  d.y = enemigoFila2.members[o].y;
+			  FlxG.state.add(d);
+			  }
+		  }
+		  break;
+		  case 2: for (i in 0...enemigosFila3.length)
+		  {
+			  o = Math random() * enemigoFila3.length
+			  if (enemigoFila3.members[o].exist && Reg.)
+			  {
+				  d = new BalasEnemigos();
+			  Reg.disparoE = false;
+			  d.x = enemigoFila1.members[o].x + enemigoFila1.members[o].width / 2;
+			  d.y = enemigoFila1.members[o].y;
+			  FlxG.state.add(d);
+			  }
+		  }
+		  break;
+		  case 3: for (i in 0...enemigosFila4.length)
+		  {o = Math random() * enemigoFila4.length
+			  if (enemigoFila4.members[o].exist)
+			  {
+				  
+			  }
+		  }
+		  break;
 		if (FlxG.keys.justPressed.SPACE && Reg.disparo == true)
 		{			
 			b = new Balas();
