@@ -201,4 +201,6 @@ class PlayState extends FlxState
 			b.x = personaje.x + personaje.width / 2;
 			b.y = personaje.y;
 			FlxG.state.add(b);
-		}
+		}		
+	}
+}
