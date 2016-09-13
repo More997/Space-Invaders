@@ -9,4 +9,5 @@ class Reg
 	static public var vidasActuales: Int = vidasIniciales; 
 	static public var posxjug:Float;
 	static public var posyjug:Float;
+	static public var reboteEnemigos:Bool = false;
 }

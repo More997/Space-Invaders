@@ -97,6 +97,7 @@ class PlayState extends FlxState
 		colisionBalaJugador();
 		colisionBalaEnemigo();
 		colisionBalasBalas();
+		movimientoEnemigos();
 		
 		if (FlxG.keys.justPressed.SPACE && Reg.disparo == true)
 		{			
@@ -182,11 +183,11 @@ class PlayState extends FlxState
 			}
 		}
 	}
-	public function colisionBalaEnemigo()
+	public function colisionBalaEnemigo()//Colisiona con la ultima bala creada de br.
 	{
 		if (Reg.vidasActuales > 0)
 		{
-			if (FlxG.overlap(personaje, br))//por alguna razon no colisiona con los bordes(las "alas") del personaje. es que el centro es la nave.
+			if (FlxG.overlap(personaje, br))
 			{
 				trace("colision");
 				br.destroy();
@@ -202,7 +203,7 @@ class PlayState extends FlxState
 			Reg.disparo = true;
 		}
 	}
-	public function colisionBalasBalas()
+	public function colisionBalasBalas()//Colisiona con la ultima bala creada de br.
 	{
 		if (FlxG.overlap(b,br)) 
 		{

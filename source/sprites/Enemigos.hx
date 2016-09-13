@@ -9,22 +9,31 @@ import flixel.FlxG;
  */
 class Enemigos extends FlxSprite
 {
-	//public var posicionX:Int = 0; Esto no afecta nada, se podria borrar.
-	public var timer:Int = 0;
-
+	//public var timer:Int = 0;
 	public function new(?X:Float=0, ?Y:Float=0, ?SimpleGraphic:FlxGraphicAsset) 
 	{
-		super(X, Y, SimpleGraphic);	
+		super(X, Y, SimpleGraphic);
+		velocity.x = 20;
 	}	
 	override public function update(elapsed:Float):Void
 	{
 		super.update(elapsed);
-		timer++;		
+		/*timer++;		
 		if (timer == 180) 
 		{
 			y++;
 			timer = 0;
-		}
+		}*/
+		//no afecta a los enemigos en conjunto
+		/*if (x > FlxG.width - width && velocity.x > 0)
+			Reg.reboteEnemigos = true;
+		if (x < 0 && velocity.x < 0)
+			Reg.reboteEnemigos = true;
+		if (Reg.reboteEnemigos == true)
+		{
+			velocity.x *= -1;
+			Reg.reboteEnemigos = false;
+		}*/
 	}
 }	
 
