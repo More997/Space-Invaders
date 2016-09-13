@@ -15,7 +15,7 @@ class Balasenemigo extends FlxSprite
 	{
 		super(X, Y, SimpleGraphic);
 		makeGraphic(2, 4);
-		velocity.y = 80;
+		velocity.y = 20;
 	}
 		override public function update(elapsed:Float):Void
 	{

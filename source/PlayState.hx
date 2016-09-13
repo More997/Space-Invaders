@@ -96,6 +96,8 @@ class PlayState extends FlxState
 		recorre();
 		colisionBalaJugador();
 		colisionBalaEnemigo();
+		colisionBalasBalas();
+		
 		if (FlxG.keys.justPressed.SPACE && Reg.disparo == true)
 		{			
 			b = new Balas();
@@ -196,7 +198,16 @@ class PlayState extends FlxState
 		if (FlxG.keys.pressed.R) 
 		{  
 			FlxG.resetState();
-			Reg.vidasActuales = 3;
+			Reg.vidasActuales = 3  ;
+			Reg.disparo = true;
+		}
+	}
+	public function colisionBalasBalas()
+	{
+		if (FlxG.overlap(b,br)) 
+		{
+			b.destroy();
+			br.destroy();
 			Reg.disparo = true;
 		}
 	}
