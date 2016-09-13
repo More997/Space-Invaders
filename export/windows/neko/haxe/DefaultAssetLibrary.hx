@@ -68,6 +68,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
+		
 		Font.registerFont (__ASSET__flixel_fonts_nokiafc22_ttf);
 		Font.registerFont (__ASSET__flixel_fonts_monsterrat_ttf);
 		
@@ -76,6 +78,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
+		useManifest = true;
+		useManifest = true;
 		useManifest = true;
 		useManifest = true;
 		useManifest = true;
@@ -595,6 +599,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
+		
 		openfl.text.Font.registerFont (__ASSET__OPENFL__flixel_fonts_nokiafc22_ttf);
 		openfl.text.Font.registerFont (__ASSET__OPENFL__flixel_fonts_monsterrat_ttf);
 		
@@ -613,8 +619,12 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/images/Enemigo03.png", AssetType.IMAGE);
 		path.set ("assets/images/Enemigo04.png", "assets/images/Enemigo04.png");
 		type.set ("assets/images/Enemigo04.png", AssetType.IMAGE);
+		path.set ("assets/images/Escudos.png", "assets/images/Escudos.png");
+		type.set ("assets/images/Escudos.png", AssetType.IMAGE);
 		path.set ("assets/images/images-go-here.txt", "assets/images/images-go-here.txt");
 		type.set ("assets/images/images-go-here.txt", AssetType.TEXT);
+		path.set ("assets/images/morir.png", "assets/images/morir.png");
+		type.set ("assets/images/morir.png", AssetType.IMAGE);
 		path.set ("assets/images/Ovni.png", "assets/images/Ovni.png");
 		type.set ("assets/images/Ovni.png", AssetType.IMAGE);
 		path.set ("assets/images/Protagonista.png", "assets/images/Protagonista.png");
@@ -653,9 +663,15 @@ class DefaultAssetLibrary extends AssetLibrary {
 		id = "assets/images/Enemigo04.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
+		id = "assets/images/Escudos.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
 		id = "assets/images/images-go-here.txt";
 		path.set (id, id);
 		type.set (id, AssetType.TEXT);
+		id = "assets/images/morir.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
 		id = "assets/images/Ovni.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
@@ -705,6 +721,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
+		useManifest = true;
+		useManifest = true;
 		useManifest = true;
 		useManifest = true;
 		useManifest = true;
@@ -1458,6 +1476,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+
+
 @:keep @:bind #if display private #end class __ASSET__flixel_sounds_beep_ogg extends null { }
 @:keep @:bind #if display private #end class __ASSET__flixel_sounds_flixel_ogg extends null { }
 @:keep @:bind #if display private #end class __ASSET__flixel_fonts_nokiafc22_ttf extends null { }
@@ -1466,6 +1486,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 #elseif html5
+
+
 
 
 

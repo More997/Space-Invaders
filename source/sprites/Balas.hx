@@ -12,8 +12,15 @@ class Balas extends FlxSprite
 	public function new(?X:Float=0, ?Y:Float=0, ?SimpleGraphic:FlxGraphicAsset) 
 	{
 		super(X, Y, SimpleGraphic);
-		makeGraphic(2, 4);
-		velocity.y = -120;
+		makeGraphic(2, 4); 
+		if (Reg.vidasActuales>0) 
+		{
+			velocity.y = -120;
+		}else 
+		{
+			destroy();
+		}
+		
 	}
 		override public function update(elapsed:Float):Void
 	{

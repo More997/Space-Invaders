@@ -39,7 +39,6 @@ class PlayState extends FlxState
 			enemigos1.animation.add("mov", [0, 1], 2, true);
 			enemigos1.animation.play("mov");			
 			enemigoFila1.add(enemigos1);
-			//enemigos1.posicionX = pos; Esto no afecta nada, se podria borrar.
 			pos += 17;
 		}
 		enemigoFila2 = new FlxTypedGroup<FlxObject>();
@@ -51,7 +50,6 @@ class PlayState extends FlxState
 			enemigos2.animation.add("mov", [0, 1], 2, true);
 			enemigos2.animation.play("mov");
 			enemigoFila2.add(enemigos2);
-			//enemigos2.posicionX = pos; Esto no afecta nada, se podria borrar.
 		    enemigos2.y = 17;
 			pos += 17;
 		}
@@ -64,7 +62,6 @@ class PlayState extends FlxState
 			enemigos3.animation.add("mov", [0, 1], 2, true);
 			enemigos3.animation.play("mov");
 			enemigoFila3.add(enemigos3);
-			//enemigos3.posicionX = pos; Esto no afecta nada, se podria borrar.
 			enemigos3.y = 34;
 			pos += 17;
 		}
@@ -77,7 +74,6 @@ class PlayState extends FlxState
 			enemigos4.animation.add("mov", [0, 1], 2, true);
 			enemigos4.animation.play("mov");
 			enemigoFila4.add(enemigos4);
-			//enemigos4.posicionX = pos; Esto no afecta nada, se podria borrar.
 		    enemigos4.y = 51;
 			pos += 17;
 		}
@@ -89,6 +85,8 @@ class PlayState extends FlxState
 		add(enemigoFila4);
 		personaje.y = FlxG.height - personaje.height;
 		personaje.x = FlxG.width / 2 - personaje.width / 2;
+		Reg.posxjug = personaje.x;
+		Reg.posyjug = personaje.y;
 	}
 
 	override public function update(elapsed:Float):Void
@@ -186,15 +184,20 @@ class PlayState extends FlxState
 	{
 		if (Reg.vidasActuales > 0)
 		{
-			if (FlxG.overlap(personaje, br))//por alguna razon no colisiona con los bordes(las "alas") del personaje.
+			if (FlxG.overlap(personaje, br))//por alguna razon no colisiona con los bordes(las "alas") del personaje. es que el centro es la nave.
 			{
 				trace("colision");
 				br.destroy();
 				Reg.vidasActuales--;
+				if (Reg.vidasActuales == 0)
+				personaje.destroy();
 			}
-		}else
-		{
-			FlxG.resetGame();//no se me ocurre bien que poner aca.
+		}
+		if (FlxG.keys.pressed.R) 
+		{  
+			FlxG.resetState();
+			Reg.vidasActuales = 3;
+			Reg.disparo = true;
 		}
 	}
 }
