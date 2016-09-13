@@ -31,7 +31,6 @@ class PlayState extends FlxState
 		b = new Balas();
 
 		enemigoFila1 = new FlxTypedGroup<FlxObject>();
-
 		var pos = 3;
 		for (i in 0...8)
 		{   
@@ -40,12 +39,11 @@ class PlayState extends FlxState
 			enemigos1.animation.add("mov", [0, 1], 2, true);
 			enemigos1.animation.play("mov");			
 			enemigoFila1.add(enemigos1);
-			enemigos1.posicionX = pos;
+			//enemigos1.posicionX = pos; Esto no afecta nada, se podria borrar.
 			pos += 17;
-			
 		}
 		enemigoFila2 = new FlxTypedGroup<FlxObject>();
-	     pos = 3;
+	    pos = 3;
 		for (i in 0...8)
 		{   
 			var enemigos2:sprites.Enemigos  = new sprites.Enemigos (pos);
@@ -53,10 +51,9 @@ class PlayState extends FlxState
 			enemigos2.animation.add("mov", [0, 1], 2, true);
 			enemigos2.animation.play("mov");
 			enemigoFila2.add(enemigos2);
-			enemigos2.posicionX = pos;
+			//enemigos2.posicionX = pos; Esto no afecta nada, se podria borrar.
 		    enemigos2.y = 17;
 			pos += 17;
-			
 		}
 		enemigoFila3 = new FlxTypedGroup<FlxObject>();
 		pos= 3;
@@ -67,13 +64,12 @@ class PlayState extends FlxState
 			enemigos3.animation.add("mov", [0, 1], 2, true);
 			enemigos3.animation.play("mov");
 			enemigoFila3.add(enemigos3);
-			enemigos3.posicionX = pos;
+			//enemigos3.posicionX = pos; Esto no afecta nada, se podria borrar.
 			enemigos3.y = 34;
 			pos += 17;
-			
 		}
 		enemigoFila4 = new FlxTypedGroup<FlxObject>();
-	     pos = 3;
+	    pos = 3;
 		for (i in 0...8)
 		{   
 			var enemigos4:sprites.Enemigos  = new sprites.Enemigos (pos);
@@ -81,10 +77,9 @@ class PlayState extends FlxState
 			enemigos4.animation.add("mov", [0, 1], 2, true);
 			enemigos4.animation.play("mov");
 			enemigoFila4.add(enemigos4);
-			enemigos4.posicionX = pos;
+			//enemigos4.posicionX = pos; Esto no afecta nada, se podria borrar.
 		    enemigos4.y = 51;
 			pos += 17;
-			
 		}
 		personaje = new sprites.Personaje();
 		add(personaje);
@@ -101,58 +96,19 @@ class PlayState extends FlxState
 		super.update(elapsed);
 		personaje.acciones();
 		recorre();
-		for (i in 0...enemigoFila1.length)
-		{
-			if (FlxG.overlap(b, enemigoFila1.members[i]))
-			{
-			Reg.disparo = true;
-			b.destroy();
-			
-			enemigoFila1.members[i].kill();
-			}
-		} 
-	    for (i in 0...enemigoFila2.length)
-		{
-			if (FlxG.overlap(b, enemigoFila2.members[i]))
-			{
-			Reg.disparo = true;
-			b.destroy();
-			enemigoFila2.members[i].kill();
-			}
-		} 
-		for (i in 0...enemigoFila3.length)
-		{
-			if (FlxG.overlap(b, enemigoFila3.members[i]))
-			{
-			Reg.disparo = true;
-			b.destroy();
-			enemigoFila3.members[i].kill();
-			}
-		} 
-		for (i in 0...enemigoFila4.length)
-		{
-			if (FlxG.overlap(b, enemigoFila4.members[i]))
-			{
-			Reg.disparo = true;
-			b.destroy();
-			enemigoFila4.members[i].kill();
-			}
-		} if (FlxG.keys.justPressed.SPACE && Reg.disparo == true)
+		colisionBalaJugador();
+		colisionBalaEnemigo();
+		if (FlxG.keys.justPressed.SPACE && Reg.disparo == true)
 		{			
 			b = new Balas();
 			Reg.disparo = false;
 			b.x = personaje.x + personaje.width / 2;
 			b.y = personaje.y;
 			FlxG.state.add(b);
-
 		}
-		
 	}	
 	public function recorre():Void
 	{
-		
-		
-		
 		for (i	in 0...enemigoFila1.length ) 
 		{
 			
@@ -172,7 +128,6 @@ class PlayState extends FlxState
 		}
 		for (i	in 0...enemigoFila3.length ) 
 		{
-			
 			if (FlxG.random.int(1, 2000) == 1 && enemigoFila3.members[i].alive) 
 			{
 				br = new Balasenemigo(enemigoFila3.members[i].x+enemigoFila3.members[i].width/2,enemigoFila3.members[i].y+enemigoFila3.members[i].height/2);
@@ -187,6 +142,59 @@ class PlayState extends FlxState
 				FlxG.state.add(br);				
 			}			
 		}
-	}		
-
+	}
+	public function colisionBalaJugador()
+	{
+		for (i in 0...enemigoFila1.length)
+		{
+			if (FlxG.overlap(b, enemigoFila1.members[i]))
+			{
+				Reg.disparo = true;
+				b.destroy();
+				enemigoFila1.members[i].kill();
+			}
+		} 
+	    for (i in 0...enemigoFila2.length)
+		{
+			if (FlxG.overlap(b, enemigoFila2.members[i]))
+			{
+				Reg.disparo = true;
+				b.destroy();
+				enemigoFila2.members[i].kill();
+			}
+		} 
+		for (i in 0...enemigoFila3.length)
+		{
+			if (FlxG.overlap(b, enemigoFila3.members[i]))
+			{
+				Reg.disparo = true;
+				b.destroy();
+				enemigoFila3.members[i].kill();
+			}
+		} 
+		for (i in 0...enemigoFila4.length)
+		{
+			if (FlxG.overlap(b, enemigoFila4.members[i]))
+			{
+				Reg.disparo = true;
+				b.destroy();
+				enemigoFila4.members[i].kill();
+			}
+		}
+	}
+	public function colisionBalaEnemigo()
+	{
+		if (Reg.vidasActuales > 0)
+		{
+			if (FlxG.overlap(personaje, br))//por alguna razon no colisiona con los bordes(las "alas") del personaje.
+			{
+				trace("colision");
+				br.destroy();
+				Reg.vidasActuales--;
+			}
+		}else
+		{
+			FlxG.resetGame();//no se me ocurre bien que poner aca.
+		}
+	}
 }
