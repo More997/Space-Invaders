@@ -20,7 +20,7 @@ class Balasenemigo extends FlxSprite
 		override public function update(elapsed:Float):Void
 	{
 		super.update(elapsed);
-		if (y > FlxG.width) 
+		if (y > FlxG.height) 
 		{
 			destroy();
 		}	
