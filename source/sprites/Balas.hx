@@ -13,7 +13,7 @@ class Balas extends FlxSprite
 	{
 		super(X, Y, SimpleGraphic);
 		makeGraphic(2, 4);
-		velocity.y = -200;
+		velocity.y = -150;
 	}
 		override public function update(elapsed:Float):Void
 	{
@@ -22,7 +22,10 @@ class Balas extends FlxSprite
 		{
 			Reg.disparo = true;
 			destroy();
-		}
-	
+
+		}		
+
 	}
+	
+
 }
