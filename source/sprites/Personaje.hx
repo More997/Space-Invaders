@@ -10,7 +10,7 @@ import sprites.Balas;
  */
 class Personaje extends FlxSprite
 {
-	private var velocidadJugador = 3;
+	private var velocidadJugador = 2;
 	
 	public function movder()
 	{
