@@ -13,7 +13,7 @@ class Enemigos extends FlxSprite
 	public function new(?X:Float=0, ?Y:Float=0, ?SimpleGraphic:FlxGraphicAsset) 
 	{
 		super(X, Y, SimpleGraphic);
-		//velocity.x = 20;
+		velocity.x = 10;
 	}	
 	override public function update(elapsed:Float):Void
 	{
@@ -24,16 +24,21 @@ class Enemigos extends FlxSprite
 			y++;
 			timer = 0;
 		}*/
-		//no afecta a los enemigos en conjunto
-		/*if (x > FlxG.width - width && velocity.x > 0)
+		if (x > FlxG.width - width && velocity.x > 0)
 			Reg.reboteEnemigos = true;
 		if (x < 0 && velocity.x < 0)
 			Reg.reboteEnemigos = true;
 		if (Reg.reboteEnemigos == true)
 		{
 			velocity.x *= -1;
-			Reg.reboteEnemigos = false;
-		}*/
+			y += 2;
+			Reg.conE++;
+			if (Reg.conE == Reg.enemigosAlive)
+			{
+				Reg.reboteEnemigos = false;
+				Reg.conE = 0;
+			}
+		}
 	}
 }	
 

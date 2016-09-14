@@ -101,7 +101,7 @@ class PlayState extends FlxState
 		colisionBalaJugador();
 		colisionBalaEnemigo();
 		colisionBalasBalas();
-		
+		Reg.enemigosAlive = contadorEnemigos();
 		
 		if (FlxG.keys.justPressed.SPACE && Reg.disparo == true)
 		{			
@@ -239,5 +239,21 @@ class PlayState extends FlxState
 				Reg.disparo = true;
 			}
 		}
+	}
+	public function contadorEnemigos():Int
+	{
+		var a:Int = 0;
+		for (i in 0...enemigoFila1.length)
+		{
+			if (enemigoFila1.members[i].alive)
+				a++;
+			if (enemigoFila2.members[i].alive)
+				a++;
+			if (enemigoFila3.members[i].alive)
+				a++;
+			if (enemigoFila4.members[i].alive)
+				a++;
+		}
+		return a;
 	}
 }
