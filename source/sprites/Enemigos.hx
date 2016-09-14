@@ -13,7 +13,7 @@ class Enemigos extends FlxSprite
 	public function new(?X:Float=0, ?Y:Float=0, ?SimpleGraphic:FlxGraphicAsset) 
 	{
 		super(X, Y, SimpleGraphic);
-		velocity.x = 20;
+		//velocity.x = 20;
 	}	
 	override public function update(elapsed:Float):Void
 	{

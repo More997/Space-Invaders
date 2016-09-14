@@ -21,9 +21,11 @@ class PlayState extends FlxState
 	private var enemigoFila2:FlxTypedGroup<FlxObject>;
 	private var enemigoFila3:FlxTypedGroup<FlxObject>;
 	private var enemigoFila4:FlxTypedGroup<FlxObject>;
+	private var balasEnemigos:FlxTypedGroup<FlxObject>;
 	private var personaje:sprites.Personaje;
 	public var b:Balas;
 	public var br:Balasenemigo;
+	public var randomBalas:Int = 3050;
 
 	override public function create():Void
 	{
@@ -77,6 +79,7 @@ class PlayState extends FlxState
 		    enemigos4.y = 51;
 			pos += 17;
 		}
+		balasEnemigos = new FlxTypedGroup<FlxObject>();
 		personaje = new sprites.Personaje();
 		add(personaje);
 		add(enemigoFila1);
@@ -97,7 +100,7 @@ class PlayState extends FlxState
 		colisionBalaJugador();
 		colisionBalaEnemigo();
 		colisionBalasBalas();
-		movimientoEnemigos();
+		
 		
 		if (FlxG.keys.justPressed.SPACE && Reg.disparo == true)
 		{			
@@ -113,7 +116,7 @@ class PlayState extends FlxState
 		for (i	in 0...enemigoFila1.length ) 
 		{
 			
-			if (FlxG.random.int(1, 2000) == 1 && enemigoFila1.members[i].alive) 
+			if (FlxG.random.int(1, randomBalas) == 1 && enemigoFila1.members[i].alive) 
 			{
 				br = new Balasenemigo(enemigoFila1.members[i].x+enemigoFila1.members[i].width/2,enemigoFila1.members[i].y+enemigoFila1.members[i].height/2);
 				FlxG.state.add(br);			
@@ -121,7 +124,7 @@ class PlayState extends FlxState
 		}
 		for (i	in 0...enemigoFila2.length ) 
 		{			
-			if (FlxG.random.int(1, 2000) == 1 && enemigoFila2.members[i].alive) 
+			if (FlxG.random.int(1, randomBalas) == 1 && enemigoFila2.members[i].alive) 
 			{
 				br = new Balasenemigo(enemigoFila2.members[i].x+enemigoFila2.members[i].width/2,enemigoFila2.members[i].y+enemigoFila2.members[i].height/2);
 				FlxG.state.add(br);				
@@ -129,7 +132,7 @@ class PlayState extends FlxState
 		}
 		for (i	in 0...enemigoFila3.length ) 
 		{
-			if (FlxG.random.int(1, 2000) == 1 && enemigoFila3.members[i].alive) 
+			if (FlxG.random.int(1, randomBalas) == 1 && enemigoFila3.members[i].alive) 
 			{
 				br = new Balasenemigo(enemigoFila3.members[i].x+enemigoFila3.members[i].width/2,enemigoFila3.members[i].y+enemigoFila3.members[i].height/2);
 				FlxG.state.add(br);				
@@ -137,7 +140,7 @@ class PlayState extends FlxState
 		}
 		for (i	in 0...enemigoFila4.length ) 
 		{			
-			if (FlxG.random.int(1, 2000) == 1 && enemigoFila4.members[i].alive) 
+			if (FlxG.random.int(1, randomBalas) == 1 && enemigoFila4.members[i].alive) 
 			{
 				br = new Balasenemigo(enemigoFila4.members[i].x+enemigoFila4.members[i].width/2,enemigoFila4.members[i].y+enemigoFila4.members[i].height/2);
 				FlxG.state.add(br);				
@@ -153,6 +156,10 @@ class PlayState extends FlxState
 				Reg.disparo = true;
 				b.destroy();
 				enemigoFila1.members[i].kill();
+				if (randomBalas > 100)
+				{
+				randomBalas -= 100;
+				}
 			}
 		} 
 	    for (i in 0...enemigoFila2.length)
@@ -162,6 +169,10 @@ class PlayState extends FlxState
 				Reg.disparo = true;
 				b.destroy();
 				enemigoFila2.members[i].kill();
+				if (randomBalas > 100)
+				{
+				randomBalas -= 100;
+				}
 			}
 		} 
 		for (i in 0...enemigoFila3.length)
@@ -171,6 +182,10 @@ class PlayState extends FlxState
 				Reg.disparo = true;
 				b.destroy();
 				enemigoFila3.members[i].kill();
+				if (randomBalas > 100)
+				{
+				randomBalas -= 100;
+				}
 			}
 		} 
 		for (i in 0...enemigoFila4.length)
@@ -180,6 +195,10 @@ class PlayState extends FlxState
 				Reg.disparo = true;
 				b.destroy();
 				enemigoFila4.members[i].kill();
+				if (randomBalas > 100)
+				{
+				randomBalas -= 100;
+				}
 			}
 		}
 	}
@@ -201,6 +220,7 @@ class PlayState extends FlxState
 			FlxG.resetState();
 			Reg.vidasActuales = 3  ;
 			Reg.disparo = true;
+			randomBalas = 3050;
 		}
 	}
 	public function colisionBalasBalas()//Colisiona con la ultima bala creada de br.
