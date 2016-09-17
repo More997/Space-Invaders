@@ -24,13 +24,23 @@ class PlayState extends FlxState
 	private var balasEnemigos:FlxTypedGroup<FlxObject>;
 	private var personaje:sprites.Personaje;
 	public var b:Balas;
-	
+	public var escu:FlxSprite;
 	public var randomBalas:Int = 3050;
+	public var posescux:Int = 20;
 
 	override public function create():Void
 	{
 		super.create();
 		b = new Balas();
+		for (i in 0...4)
+		{   escu = new FlxSprite();
+		escu.loadGraphic(AssetPaths.Escudos__png,true,16,16);
+
+			escu.x = posescux;
+		    escu.y =	110;
+			posescux += 35;
+			add(escu);
+		}
 
 		enemigoFila1 = new FlxTypedGroup<FlxObject>();
 		var pos = 3;
